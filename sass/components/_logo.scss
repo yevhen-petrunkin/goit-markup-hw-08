@@ -1,0 +1,14 @@
+.logo {
+  @extend %link;
+  padding: 24px 0 25px 0;
+  margin-right: 93px;
+  color: var(--blue-color);
+  font-family: var(--raleway);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+
+  &__accent {
+    color: var(--black-color);
+  }
+}

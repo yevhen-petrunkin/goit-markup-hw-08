@@ -1,0 +1,44 @@
+%section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: $tabletMax) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+%list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+%link {
+  color: var(--primary-black-color);
+  text-decoration: none;
+}
+
+%bg-grey {
+  background-color: var(--occasional-grey-color);
+}
+
+%second-heading {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  text-align: center;
+
+  @media screen and (min-width: $desktopMin) {
+    margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

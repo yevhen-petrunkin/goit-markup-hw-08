@@ -1,0 +1,38 @@
+.activities {
+  @extend %section;
+
+  @media screen and (max-width: $desktopMin) {
+    display: none;
+  }
+}
+
+.activities__heading {
+  @extend %second-heading;
+}
+
+.activities__list {
+  @extend %list;
+  display: flex;
+  justify-content: space-between;
+}
+
+.activities__card {
+  position: relative;
+}
+
+.activities__caption {
+  @extend %flex-center;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.activities__title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: var(--white-color);
+}

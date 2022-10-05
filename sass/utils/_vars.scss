@@ -1,0 +1,28 @@
+:root {
+  /* Colors */
+  --white-color: #ffffff;
+  --blue-color: #2196f3;
+  --submit-hover-color: #188ce8;
+  --grey-color: #2f303a;
+  --black-color: #000000;
+  --primary-black-color: #212121;
+  --secondary-grey-color: #757575;
+  --secondary-white-color: rgba(255, 255, 255, 0.6);
+  --footer-white-color: rgba(255, 255, 255, 0.1);
+  --occasional-grey-color: #f5f4fa;
+  --media-icon-grey-color: #afb1b8;
+
+  /* Fonts */
+  --roboto: 'Roboto', sans-serif;
+  --raleway: 'Raleway', sans-serif;
+
+  // Timing function
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+$mobileMin: 480px;
+$mobileMax: 767px;
+$tabletMin: 768px;
+$tabletMax: 1199px;
+$desktopMin: 1200px;

@@ -1,26 +1,67 @@
 .hero {
   margin-left: auto;
   margin-right: auto;
-  max-width: 1600px;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  min-width: 320px;
+  min-height: 400px;
+  padding-top: 118px;
+  padding-bottom: 118px;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url('../images/bg-images/bg-img-1600.jpg');
-  background-position: center;
+    url('../images/bg-images/bg-img-480.jpg');
+
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: var(--grey-color);
   text-align: center;
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .hero {
+      background-image: url('../images/bg-images/bg-img-480@2x.jpg');
+    }
+  }
+
+  @media screen and (min-width: $tabletMin) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/bg-images/bg-img-768.jpg');
+    min-width: 768px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .hero {
+        background-image: url('../images/bg-images/bg-img-768@2x.jpg');
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktopMin) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/bg-images/bg-img-1600.jpg');
+    min-width: 1200px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      .hero {
+        background-image: url('../images/bg-images/bg-img-1600@2x.jpg');
+      }
+    }
+  }
 }
 
 .hero__heading {
   margin: 0 auto 30px;
-  max-width: 696px;
+  max-width: 360px;
   color: var(--white-color);
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 42px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+
+  @media screen and (min-width: $desktopMin) {
+    max-width: 696px;
+    font-size: 44px;
+    line-height: 60px;
+  }
 }
 
 .hero__btn {

@@ -3,15 +3,39 @@
   padding-bottom: 60px;
   background-color: var(--grey-color);
   letter-spacing: 0.03em;
+
+  @media screen and (max-width: $tabletMax) {
+    text-align: center;
+
+    @media screen and (min-width: $desktopMin) {
+      text-align: left;
+    }
+  }
 }
 
 .footer__sections {
-  display: flex;
-  align-items: baseline;
+  @media screen and (min-width: $desktopMin) {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.footer__info {
+  @media screen and (min-width: $tabletMin) {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-right: auto;
+  }
 }
 
 .footer__address {
-  margin-right: 70px;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $desktopMin) {
+    margin-right: 70px;
+    margin-bottom: 0;
+  }
 }
 
 .footer__logo {
@@ -32,7 +56,11 @@
 /* Footer Links */
 
 .footer-media {
-  margin-right: auto;
+  margin-bottom: 60px;
+
+  @media screen and (min-width: $desktopMin) {
+    margin-bottom: 0;
+  }
 }
 
 .footer-media__title {
@@ -80,25 +108,51 @@
 
 .footer-form__block {
   position: relative;
-  display: flex;
   color: var(--secondary-white-color);
+
+  @media screen and (min-width: $tabletMin) {
+    display: inline-block;
+    text-align: center;
+    min-width: 450px;
+  }
+
+  @media screen and (min-width: $desktopMin) {
+    display: flex;
+  }
 }
 
 .footer-form__input {
   padding-left: 16px;
-  margin-right: 12px;
-  width: 358px;
-  height: 50px;
-  display: inline-block;
+  margin-bottom: 20px;
+  width: 100%;
+  min-height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: inherit;
   color: currentColor;
 
+  &:focus,
+  &:not(:placeholder-shown) {
+    outline: none;
+  }
+
   &:focus + .footer-form__label,
   &:not(:placeholder-shown) + .footer-form__label {
-    transform: translateX(calc(-100% + -32px));
+    transform: translateY(calc(-100% + -30px));
+  }
+
+  @media screen and (min-width: $tabletMin) {
+    &:focus + .footer-form__label,
+    &:not(:placeholder-shown) + .footer-form__label {
+      transform: translateX(calc(-100% + -32px));
+    }
+  }
+
+  @media screen and (min-width: $desktopMin) {
+    margin-bottom: 0;
+    margin-right: 12px;
+    min-width: 358px;
   }
 }
 
@@ -114,4 +168,5 @@
 .footer-form__btn {
   @extend %flex-center;
   gap: 10px;
+  margin: 0 auto;
 }

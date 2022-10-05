@@ -7,17 +7,20 @@
 }
 
 .clients__list {
-  @extend %flex-center;
+  @extend %flex-wrap;
   @extend %list;
 }
 
 .clients__item {
-  margin-right: 30px;
-  width: 170px;
-  height: 92px;
+  flex-basis: calc((100% - 30px) / 2);
+  min-height: 92px;
 
-  &:last-child {
-    margin-right: 0;
+  @media screen and (min-width: $tabletMin) {
+    flex-basis: calc((100% - 60px) / 3);
+
+    @media screen and (min-width: $desktopMin) {
+      flex-basis: calc((100% - 150px) / 6);
+    }
   }
 }
 

@@ -42,3 +42,9 @@
   align-items: center;
   justify-content: center;
 }
+
+%flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}

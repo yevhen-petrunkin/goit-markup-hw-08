@@ -21,6 +21,10 @@
 }
 
 .features__item {
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
   @media screen and (min-width: $tabletMin) {
     flex-basis: calc((100% - 30px) / 2);
 

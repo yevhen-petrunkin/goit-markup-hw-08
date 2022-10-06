@@ -1,12 +1,21 @@
 .projects__set {
   @extend %list;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
 }
 
 .projects__card {
-  flex-basis: calc((100% - 60px) / 3);
+  min-width: 450px;
+  @media screen and (min-width: $tabletMin) {
+    min-width: 354px;
+    flex-basis: calc((100% - 30px) / 2);
+    @media screen and (min-width: $desktopMin) {
+      min-width: 370px;
+      flex-basis: calc((100% - 60px) / 3);
+    }
+  }
 }
 
 .projects__link {
@@ -24,6 +33,10 @@
   &:focus .projects__description {
     transform: translateY(-100%);
   }
+}
+
+.projects__img {
+  width: 100%;
 }
 
 .projects__overlay {

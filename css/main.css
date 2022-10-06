@@ -59,7 +59,7 @@
 }
 
 .footer-form__btn, .footer-media__link, .footer-media__list, .clients__link, .activities__caption, .features__symbol, .nav__contacts, .nav__link--separate, .nav__bar, .nav,
-.nav__menu, .filter, .media__link, .media, .submit-data__label, .modal__close-btn {
+.nav__menu, .media__link, .media, .submit-data__label, .modal__close-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -412,12 +412,38 @@ li {
 }
 
 .filter {
-  padding-left: 0;
-  margin: 0 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .filter {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1200px) {
+  .filter {
+    margin-bottom: 50px;
+  }
 }
 
 .filter__item {
   margin-left: 8px;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 768px) {
+  .filter__item {
+    margin-bottom: 0;
+  }
 }
 
 .filter__btn {
@@ -445,21 +471,37 @@ li {
 .filter__btn--main {
   padding-left: 25px;
   padding-right: 25px;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .projects__set {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 30px;
 }
 
 .projects__card {
-  -ms-flex-preferred-size: calc((100% - 60px) / 3);
-      flex-basis: calc((100% - 60px) / 3);
+  min-width: 450px;
+}
+@media screen and (min-width: 768px) {
+  .projects__card {
+    min-width: 354px;
+    -ms-flex-preferred-size: calc((100% - 30px) / 2);
+        flex-basis: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1200px) {
+  .projects__card {
+    min-width: 370px;
+    -ms-flex-preferred-size: calc((100% - 60px) / 3);
+        flex-basis: calc((100% - 60px) / 3);
+  }
 }
 
 .projects__link {
@@ -476,6 +518,10 @@ li {
 .projects__link:hover .projects__description, .projects__link:focus .projects__description {
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
+}
+
+.projects__img {
+  width: 100%;
 }
 
 .projects__overlay {

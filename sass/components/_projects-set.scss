@@ -7,12 +7,12 @@
 }
 
 .projects__card {
-  min-width: 450px;
+  max-width: 450px;
   @media screen and (min-width: $tabletMin) {
-    min-width: 354px;
+    max-width: 354px;
     flex-basis: calc((100% - 30px) / 2);
     @media screen and (min-width: $desktopMin) {
-      min-width: 370px;
+      max-width: 370px;
       flex-basis: calc((100% - 60px) / 3);
     }
   }

@@ -21,14 +21,14 @@
     />
 
     <link href="./css/main.min.css" rel="stylesheet" />
-    <!-- <link href="./css/styles.css" rel="stylesheet" /> -->
   </head>
   <body>
-    <!-- <header class="header">
+    <header class="header">
       <div class="nav container">
         <nav class="nav__menu">
-          <a class="logo" href="./">Web<span class="logo__accent">Studio</span></a>
-
+          <a class="logo" href="./" aria-label="Webstudio logo"
+            >Web<span class="logo__accent">Studio</span></a
+          >
           <ul class="nav__bar">
             <li class="nav__item">
               <a class="nav__link" href="./">Студія</a>
@@ -58,8 +58,49 @@
             >
           </li>
         </ul>
+        <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="menu-toggle__icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-burger"></use>
+          </svg>
+        </button>
       </div>
-    </header> -->
+
+      <!-- Mobile Menu -->
+
+      <div class="menu-container js-menu-container" id="mobile-menu">
+        <button class="menu-toggle js-close-menu">
+          <svg class="menu-toggle__icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-cross"></use>
+          </svg>
+        </button>
+
+        <ul class="nav__bar">
+          <li class="nav__item">
+            <a class="nav__link" href="./">Студія</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="./portfolio.html">Портфоліо</a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="">Контакти</a></li>
+        </ul>
+
+        <ul class="nav__contacts">
+          <li class="nav__item">
+            <a class="nav__link nav__call" href="tel:+380961111111"> +38 096 111 11 11</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__mail" href="mailto:info@devstudio.com"> info@devstudio.com</a>
+          </li>
+        </ul>
+
+        <ul class="mobile-menu">
+          <li><a class="mobile-menu__link" href="" class="link">Instagram</a></li>
+          <li><a class="mobile-menu__link" href="" class="link">Twitter</a></li>
+          <li><a class="mobile-menu__link" href="" class="link">Facebook</a></li>
+          <li><a class="mobile-menu__link" href="" class="link">LinkedIn</a></li>
+        </ul>
+      </div>
+    </header>
 
     <main>
       <section class="projects">
@@ -93,13 +134,35 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-1-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-1-370.jpg    1x,
+                        ./images/portfolio-images/port-1-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-1-354.jpg    1x,
+                        ./images/portfolio-images/port-1-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-1-450.jpg    1x,
+                        ./images/portfolio-images/port-1-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-1-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
+
                   <p class="projects__description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -116,13 +179,34 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-2-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-2-370.jpg    1x,
+                        ./images/portfolio-images/port-2-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-2-354.jpg    1x,
+                        ./images/portfolio-images/port-2-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-2-450.jpg    1x,
+                        ./images/portfolio-images/port-2-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-2-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
                   <p class="projects__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptates
                     odio dolorum ex sapiente provident cupiditate incidunt quibusdam praesentium
@@ -139,13 +223,34 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-3-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-3-370.jpg    1x,
+                        ./images/portfolio-images/port-3-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-3-354.jpg    1x,
+                        ./images/portfolio-images/port-3-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-3-450.jpg    1x,
+                        ./images/portfolio-images/port-3-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-3-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
                   <p class="projects__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptates
                     odio dolorum ex sapiente provident cupiditate incidunt quibusdam praesentium
@@ -162,13 +267,34 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-4-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-4-370.jpg    1x,
+                        ./images/portfolio-images/port-4-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-4-354.jpg    1x,
+                        ./images/portfolio-images/port-4-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-4-450.jpg    1x,
+                        ./images/portfolio-images/port-4-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-4-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
                   <p class="projects__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptates
                     odio dolorum ex sapiente provident cupiditate incidunt quibusdam praesentium
@@ -185,13 +311,34 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-5-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-5-370.jpg    1x,
+                        ./images/portfolio-images/port-5-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-5-354.jpg    1x,
+                        ./images/portfolio-images/port-5-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-5-450.jpg    1x,
+                        ./images/portfolio-images/port-5-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-5-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
                   <p class="projects__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptates
                     odio dolorum ex sapiente provident cupiditate incidunt quibusdam praesentium
@@ -208,13 +355,34 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-6-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-6-370.jpg    1x,
+                        ./images/portfolio-images/port-6-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-6-354.jpg    1x,
+                        ./images/portfolio-images/port-6-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-6-450.jpg    1x,
+                        ./images/portfolio-images/port-6-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-6-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
                   <p class="projects__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptates
                     odio dolorum ex sapiente provident cupiditate incidunt quibusdam praesentium
@@ -231,13 +399,34 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-7-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-7-370.jpg    1x,
+                        ./images/portfolio-images/port-7-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-7-354.jpg    1x,
+                        ./images/portfolio-images/port-7-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-7-450.jpg    1x,
+                        ./images/portfolio-images/port-7-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-7-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
                   <p class="projects__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptates
                     odio dolorum ex sapiente provident cupiditate incidunt quibusdam praesentium
@@ -254,13 +443,34 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-8-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-8-370.jpg    1x,
+                        ./images/portfolio-images/port-8-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-8-354.jpg    1x,
+                        ./images/portfolio-images/port-8-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-8-450.jpg    1x,
+                        ./images/portfolio-images/port-8-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-8-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
                   <p class="projects__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptates
                     odio dolorum ex sapiente provident cupiditate incidunt quibusdam praesentium
@@ -277,13 +487,34 @@
             <li class="projects__card">
               <a class="projects__link" href="">
                 <div class="projects__overlay">
-                  <img
-                    class="projects__img"
-                    src="./images/portfolio-images/port-9-370.jpg"
-                    alt="Екран ноутбука"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-9-370.jpg    1x,
+                        ./images/portfolio-images/port-9-370@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-9-354.jpg    1x,
+                        ./images/portfolio-images/port-9-354@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-images/port-9-450.jpg    1x,
+                        ./images/portfolio-images/port-9-450@2x.jpg 2x
+                      "
+                      media="(min-width: 480px)"
+                    />
+                    <img
+                      class="projects__img"
+                      src="./images/portfolio-images/port-9-450.jpg"
+                      alt="Екран ноутбука"
+                    />
+                  </picture>
                   <p class="projects__description">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi voluptates
                     odio dolorum ex sapiente provident cupiditate incidunt quibusdam praesentium
@@ -368,5 +599,14 @@
         </div>
       </div>
     </footer>
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+      type="module"
+    ></script>
+    <script src="./js/mobile-menu.js" type="module"></script>
   </body>
 </html>

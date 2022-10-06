@@ -27,8 +27,9 @@
     <header class="header">
       <div class="nav container">
         <nav class="nav__menu">
-          <a class="logo" href="./">Web<span class="logo__accent">Studio</span></a>
-
+          <a class="logo" href="./" aria-label="Webstudio logo"
+            >Web<span class="logo__accent">Studio</span></a
+          >
           <ul class="nav__bar">
             <li class="nav__item">
               <a class="nav__link nav__link--active" href="./">Студія</a>
@@ -58,6 +59,47 @@
             >
           </li>
         </ul>
+        <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="menu-toggle__icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-burger"></use>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+
+      <div class="menu-container js-menu-container" id="mobile-menu">
+        <button class="menu-toggle js-close-menu">
+          <svg class="menu-toggle__icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-cross"></use>
+          </svg>
+        </button>
+
+        <ul class="nav__bar">
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="./">Студія</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="./portfolio.html">Портфоліо</a>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="">Контакти</a></li>
+        </ul>
+
+        <ul class="nav__contacts">
+          <li class="nav__item">
+            <a class="nav__link nav__call" href="tel:+380961111111"> +38 096 111 11 11</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__mail" href="mailto:info@devstudio.com"> info@devstudio.com</a>
+          </li>
+        </ul>
+
+        <ul class="mobile-menu">
+          <li><a class="mobile-menu__link" href="" class="link">Instagram</a></li>
+          <li><a class="mobile-menu__link" href="" class="link">Twitter</a></li>
+          <li><a class="mobile-menu__link" href="" class="link">Facebook</a></li>
+          <li><a class="mobile-menu__link" href="" class="link">LinkedIn</a></li>
+        </ul>
       </div>
     </header>
 
@@ -70,7 +112,7 @@
 
           <!-- -- Бекдроп і модальне вікно -- -->
 
-          <!-- <div class="backdrop is-hidden" data-modal>
+          <div class="backdrop is-hidden" data-modal>
             <div class="modal">
               <button class="modal__close-btn" type="button" data-modal-close>
                 <svg class="modal__close-icon" width="30" height="30">
@@ -78,11 +120,11 @@
                 </svg>
               </button>
               <div class="modal__container">
-                <p class="modal__title">Залиште свої дані, ми вам передзвонимо</p> -->
+                <p class="modal__title">Залиште свої дані, ми вам передзвонимо</p>
 
-          <!-- Форма модального вікна -->
+                <!-- Форма модального вікна -->
 
-          <!-- <form class="modal__form">
+                <form class="modal__form">
                   <div class="pers-data">
                     <label class="pers-data__label" for="name">Ім'я</label>
                     <input class="pers-data__input" type="text" id="name" required />
@@ -126,7 +168,7 @@
                 </form>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </section>
 
@@ -646,7 +688,14 @@
         </div>
       </div>
     </footer>
-    <!-- <script src="./js/mobile-menu.js" type="module"></script> -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+      type="module"
+    ></script>
+    <script src="./js/mobile-menu.js" type="module"></script>
     <script src="./js/modal.js" type="module"></script>
   </body>
 </html>

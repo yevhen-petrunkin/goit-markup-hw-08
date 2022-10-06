@@ -28,13 +28,13 @@
   }
 }
 
-.footer-media__list, .clients__list, .team__list, .activities__list, .features__list, .nav__contacts, .nav__bar, .address__list, .projects__set, .filter, .media {
+.footer-media__list, .clients__list, .team__list, .activities__list, .features__list, .menu-container .mobile-menu, .nav__contacts, .nav__bar, .address__list, .projects__set, .filter, .media {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer__logo, .clients__link, .nav__link, .address__link, .projects__link, .submit-data__link, .logo {
+.footer__logo, .clients__link, .menu-container .mobile-menu__link, .nav__link, .address__link, .projects__link, .submit-data__link, .logo {
   color: var(--primary-black-color);
   text-decoration: none;
 }
@@ -58,8 +58,7 @@
   }
 }
 
-.footer-form__btn, .footer-media__link, .footer-media__list, .clients__link, .activities__caption, .features__symbol, .nav__contacts, .nav__link--separate, .nav__bar, .nav,
-.nav__menu, .media__link, .media, .submit-data__label, .modal__close-btn {
+.footer-form__btn, .footer-media__link, .footer-media__list, .clients__link, .activities__caption, .features__symbol, .menu-toggle, .nav__contacts, .nav__link--separate, .nav__bar, .nav__menu, .nav, .media__link, .media, .submit-data__label, .modal__close-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,8 +190,8 @@ li {
   top: 50%;
   left: 50%;
   z-index: 2;
-  width: 528px;
-  min-height: 521px;
+  width: 450px;
+  min-height: 609px;
   background-color: var(--white-color);
   border-radius: 4px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -203,6 +202,12 @@ li {
   transition: -webkit-transform 500ms var(--timing-function);
   transition: transform 500ms var(--timing-function);
   transition: transform 500ms var(--timing-function), -webkit-transform 500ms var(--timing-function);
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    min-height: 521px;
+  }
 }
 
 .modal__close-btn {
@@ -236,7 +241,12 @@ li {
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .modal__title {
+    line-height: 23px;
+  }
 }
 
 .modal__form {
@@ -343,8 +353,14 @@ li {
       -ms-flex-align: center;
           align-items: center;
   gap: 30px;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 14px;
+}
+@media screen and (min-width: 1200px) {
+  .submit-data {
+    font-size: 14px;
+    line-height: 24px;
+  }
 }
 
 .submit-data__label {
@@ -487,18 +503,18 @@ li {
 }
 
 .projects__card {
-  min-width: 450px;
+  max-width: 450px;
 }
 @media screen and (min-width: 768px) {
   .projects__card {
-    min-width: 354px;
+    max-width: 354px;
     -ms-flex-preferred-size: calc((100% - 30px) / 2);
         flex-basis: calc((100% - 30px) / 2);
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1200px) {
   .projects__card {
-    min-width: 370px;
+    max-width: 370px;
     -ms-flex-preferred-size: calc((100% - 60px) / 3);
         flex-basis: calc((100% - 60px) / 3);
   }
@@ -588,6 +604,22 @@ li {
   border-bottom: 1px solid #ececec;
 }
 
+.nav {
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav__menu {
+    display: none;
+  }
+}
+
 .nav__item {
   margin-left: 50px;
 }
@@ -631,10 +663,132 @@ li {
 .nav__contacts {
   margin-left: auto;
 }
+@media screen and (max-width: 767px) {
+  .nav__contacts {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .nav__contacts {
+    display: block;
+  }
+  .nav__contacts .nav__item:first-child {
+    margin-bottom: 10px;
+  }
+  .nav__contacts .nav__item:last-child {
+    margin-left: 0;
+  }
+  .nav__contacts .nav__link {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
 
 .nav__icon {
   margin-right: 10px;
   fill: currentColor;
+}
+
+.menu-toggle {
+  margin-left: auto;
+  border-width: 0;
+  background-color: inherit;
+}
+.menu-toggle:hover, .menu-toggle:focus {
+  color: var(--blue-color);
+}
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle__icon {
+  fill: currentColor;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    z-index: 10;
+    padding: 48px 40px;
+    width: 480px;
+    background-color: var(--white-color);
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+    -webkit-transition: -webkit-transform 250ms var(--timing-function);
+    transition: -webkit-transform 250ms var(--timing-function);
+    transition: transform 250ms var(--timing-function);
+    transition: transform 250ms var(--timing-function), -webkit-transform 250ms var(--timing-function);
+  }
+  .menu-container.is-open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .menu-container .menu-toggle {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+}
+.menu-container .mobile-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.menu-container .mobile-menu__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--blue-color);
+}
+.menu-container .nav__bar {
+  display: block;
+  margin-bottom: 302px;
+}
+.menu-container .nav__bar .nav__link {
+  font-size: 40px;
+  line-height: 47px;
+}
+.menu-container .nav__item {
+  margin-left: 0;
+  margin-bottom: 32px;
+}
+.menu-container .nav__item:last-of-type {
+  margin-bottom: 0px;
+}
+.menu-container .nav__link {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.menu-container .nav__link::after {
+  display: none;
+}
+.menu-container .nav__contacts {
+  display: block;
+  margin-left: 0;
+  margin-bottom: 64px;
+}
+.menu-container .nav__call {
+  font-size: 34px;
+  line-height: 40px;
+  color: var(--blue-color);
+}
+.menu-container .nav__mail {
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--secondary-grey-color);
+}
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: none;
+  }
 }
 
 .hero {
